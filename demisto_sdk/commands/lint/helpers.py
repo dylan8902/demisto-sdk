@@ -560,12 +560,12 @@ def get_coverage_summery_file(coverage_summery_file_path: str) -> Dict[str, floa
             os.mkdir(coverage_summery_dir_path)
     except (json.decoder.JSONDecodeError, KeyError, ValueError):
         pass
-    cov_url = "https://storage.googleapis.com/marketplace-dist-dev/code-coverage/coverage_data.json"
+    cov_url = "https://storage.googleapis.com/marketplace-dist-dev/code-coverage/coverage-min.json"
     data = requests.get(cov_url)
     data.raise_for_status()
 
-    with open(coverage_summery_file_path, 'wb') as coverage_summery_raw:
-        coverage_summery_raw.write(data.raw.read())
+    with open(coverage_summery_file_path, 'w') as coverage_summery_raw:
+        coverage_summery_raw.write(data.text)
 
     return data.json()['files']
 

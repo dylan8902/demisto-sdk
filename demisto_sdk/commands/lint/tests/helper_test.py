@@ -186,7 +186,7 @@ class TestGenerateCoverageReport:
 
 class TestGetCoverageSummeryFile:
 
-    cov_url = "https://storage.googleapis.com/marketplace-dist-dev/code-coverage/coverage_data.json"
+    cov_url = "https://storage.googleapis.com/marketplace-dist-dev/code-coverage/coverage-min.json"
 
     def test_without_file(self, requests_mock, tmpdir):
         requests_mock.get(self.cov_url, json={'files': {'Packs/Lastline/Integrations/Lastline_v2/Lastline_v2.py': 40.0},
