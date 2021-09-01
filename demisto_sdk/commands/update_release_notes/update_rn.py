@@ -154,11 +154,10 @@ class UpdateRN:
             if self.existing_rn_changed:
                 print_color(f"Finished updating release notes for {self.pack}.", LOG_COLORS.GREEN)
                 if not self.text:
-                    print_color(f"\nNext Steps:\n - Please review the "
-                                f"created release notes found at {rn_path} and document any changes you "
-                                f"made by replacing '%%UPDATE_RN%%'.\n - Commit "
-                                f"the new release notes to your branch.\nFor information regarding proper"
-                                f" format of the release notes, please refer to "
+                    print_color(f"\nNext Steps:\n"
+                                f" - Please review the created release notes found at {rn_path} "
+                                f"and document any changes you made by replacing '%%UPDATE_RN%%'.\n"
+                                f"For information regarding proper format of the release notes, please refer to "
                                 f"https://xsoar.pan.dev/docs/integrations/changelog", LOG_COLORS.GREEN)
                 return True
             else:
